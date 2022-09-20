@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tejasvitiwary/assignment:$(date +%s)
+      run: docker build . --file Dockerfile --tag tejasvitiwary/assignment:$GITHUB_RUN_NUMBER
     - name: docker push
       run: |
-        docker push tejasvitiwary/assignment:$(date +%s)
+        docker push tejasvitiwary/assignment:$GITHUB_RUN_NUMBER
